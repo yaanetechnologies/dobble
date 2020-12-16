@@ -1,3 +1,15 @@
+<?php
+
+
+session_start();
+
+//print_r($_SESSION['api_key']);
+
+$api_key = $_SESSION['api_key'];
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -178,7 +190,7 @@
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
                     <li class="active has-sub">
-                        <a class="js-arrow" href="#">
+                        <a href="dashboard.php?api_key=<?php echo $api_key ?>">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                 </ul>
@@ -338,6 +350,8 @@
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="row">
+
+                        <input type="hidden" id="api_key" name="api_key" class="form-control" value="<?php echo $_SESSION['api_key'] ?>">
 
 
                         <div class="col-lg-12 col-md-12">
@@ -648,6 +662,7 @@
            var fd = new FormData();
 
             var username = $('#first_name').val();
+            var api_key = $('#api_key').val();
             var email_id = $('#email_id').val();
             var mobile = $('#mobile').val();
             var password = $('#password').val();
@@ -658,6 +673,7 @@
             var enroll_end_date = $('#end_date').val();
 
             fd.append('username', username);
+            fd.append('api_key', api_key);
             fd.append('email_id', email_id);
             fd.append('mobile', mobile);
             fd.append('password', password);
@@ -672,7 +688,6 @@
                 url : 'submit_user.php',
 
                 type : 'post',
-
                 data: fd,
                 cache : false,
                 dataType    : 'json',
@@ -682,6 +697,19 @@
                 success:function(data)
                 {
                     console.log(data);
+
+                    if(data == 200)
+                    {
+
+                        alert("User Created");
+
+                        window.location.href = "user.php";
+                    }
+                    else
+                    {
+
+                        alert("User Failed to create")
+                    }
                 }
             })
 

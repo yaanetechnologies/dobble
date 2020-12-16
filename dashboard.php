@@ -1,66 +1,9 @@
 
-
 <?php
+
 session_start();
 
-$api_key = $_SESSION['api_key'];
-
-//$api_key = 'd191ddee617367bc17b1f36c79290eaca0d6a0449099e3b38b2ed67b2d43dcbd';
-
-
-if(isset($_GET['limit']))
-{
-    $output = $_GET['limit'] + 10;
-}
-else
-
-{
-    $output = 0;
-}
-
-
-//print_r("https://doodle.api.yaane.in/v1/super_users?limit=$output");
-
-
-$headers = array(
-    'Content-type: application/json',
-    'Authorization: '.$api_key.'',
-);
-
-
-$ch = curl_init("https://doodle.api.yaane.in/v1/super_users?limit=$output");
-
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-curl_setopt( $ch, CURLOPT_HTTPHEADER,$headers);
-
-$results = curl_exec($ch);
-
-$value = json_decode($results);
-
-//echo '<pre>';
-
-$responses = $value->{'user_info'};
-
-
-
-$number_of_result = 100;
-
-$results_per_page = 10;
-
-
-$number_of_page = ceil ($number_of_result / $results_per_page);
-
-if (!isset ($_GET['page']) ) {
-    $page = 1;
-} else {
-    $page = $_GET['page'];
-}
-
-$page_first_result = ($page-1) * $results_per_page;
-
+$_SESSION['api_key'] = $_GET['api_key'];
 
 
 ?>
@@ -77,7 +20,7 @@ $page_first_result = ($page-1) * $results_per_page;
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Unique User</title>
+    <title>Doddle | Dashboard</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -87,8 +30,6 @@ $page_first_result = ($page-1) * $results_per_page;
 
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <!-- Vendor CSS-->
     <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -104,50 +45,9 @@ $page_first_result = ($page-1) * $results_per_page;
 
 </head>
 
-<style>
-
-    .menu-sidebar
-    {
-        width: 200px !important;
-    }
-    .header-desktop
-    {
-        left: 200px;
-    }
-
-    .pagination-sm .page-link {
-        padding: .25rem .5rem;
-        font-size: .875rem;
-        line-height: 1.5;
-    }
-    .page-link {
-        position: relative;
-        display: block;
-        padding: .5rem .75rem;
-        margin-left: -1px;
-        line-height: 1.25;
-        color: #007bff;
-        background-color: #fff;
-        border: 1px solid #dee2e6;
-    }
-    .pagination
-    {
-
-        float: right;
-    }
-
-    .pagination-sm .page-item:first-child .page-link {
-        border-top-left-radius: .2rem;
-        border-bottom-left-radius: .2rem;
-        font-size: 17px;
-    }
-</style>
-
 <body class="animsition">
 <div class="page-wrapper">
-
-
-
+    <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none">
         <div class="header-mobile__bar">
             <div class="container-fluid">
@@ -166,9 +66,23 @@ $page_first_result = ($page-1) * $results_per_page;
         <nav class="navbar-mobile">
             <div class="container-fluid">
                 <ul class="navbar-mobile__list list-unstyled">
-                    <li>
-                        <a href="dashboard.php">
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                            <li>
+                                <a href="index.html">Dashboard 1</a>
+                            </li>
+                            <li>
+                                <a href="index2.html">Dashboard 2</a>
+                            </li>
+                            <li>
+                                <a href="index3.html">Dashboard 3</a>
+                            </li>
+                            <li>
+                                <a href="index4.html">Dashboard 4</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="chart.html">
@@ -262,13 +176,14 @@ $page_first_result = ($page-1) * $results_per_page;
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
                     <li class="active has-sub">
-                        <a href="dashboard.php?api_key=<?php echo $api_key ?>">
+                        <a class="js-arrow" href="#">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </aside>
+    <!-- END MENU SIDEBAR-->
 
     <!-- PAGE CONTAINER-->
     <div class="page-container">
@@ -414,135 +329,204 @@ $page_first_result = ($page-1) * $results_per_page;
                 </div>
             </div>
         </header>
+        <!-- HEADER DESKTOP-->
 
+        <!-- MAIN CONTENT-->
         <div class="main-content">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
 
-                    <div class="row" >
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <a href="add_user.php" style="float: right">
+
+                                <button type="button" class="btn btn-primary">
+
+                                    <i class="fa fa-plus"></i>
+
+                                    Add User
+
+                                </button>
+
+                            </a>
 
 
+                        </div>
 
                     </div>
 
-                    <div class="row" style="margin-left: -14                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    %;">
 
-                        <div class="row m-t-30">
-                            <div class="col-md-12">
-                                <!-- DATA TABLE-->
-                                <div class="table-responsive" style="width: 85%;margin-left: -8%;" >
-                                    <table class="table table-borderless table-data3">
-                                        <thead>
-                                        <tr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!--<div class="overview-wrap">-->
+                            <!--<h2 class="title-1">overview</h2>-->
+                            <!--<button class="au-btn au-btn-icon au-btn&#45;&#45;blue">-->
+                            <!--<i class="zmdi zmdi-plus"></i>add item</button>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                    <div class="row m-t-25">
+                        <div class="col-sm-9 col-xs-12">
+                            <a href="unique_user.php">
+                                <div class="overview-item overview-item--c3">
+                                    <div class="overview__inner" style="height: 145px">
+                                        <div class="overview-box clearfix">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="icon">
+                                                    <i class="fa fa-users"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <h2>990</h2>
+                                                    <span>Total Unique Users</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                                </div>
+                                                <br>
+                                                <div class="text">
+                                                    <h2>388</h2>
+                                                    <span>Total Units</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="icon">
+                                                    <i class="fa fa-users"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <h2>1,086</h2>
+                                                    <span>No of Doodle Customers</span>
+                                                </div>
+                                            </div>
 
-                                            <th>S.NO</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Mobile</th>
-                                            <th>Address</th>
-                                            <th>Pincode</th>
-                                            <th>Usertype</th>
-                                            <th>status</th>
-
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-
-                                        $i = 1;
-
-                                        foreach ($responses as $respons)
-                                        {
-
-                                            //print_r($respons);
-
-                                            $address = $respons->{'address'};
-                                            $city = $respons->{'city'};
-                                            $email_id = $respons->{'email_id'};
-                                            $enroll_date = $respons->{'enroll_date'};
-                                            $enroll_end_date = $respons->{'enroll_end_date'};
-                                            $mobile_no = $respons->{'mobile_no'};
-                                            $pincode = $respons->{'pincode'};
-                                            $user_name = $respons->{'user_name'};
-                                            $users_type = $respons->{'users_type'};
-                                            ?>
-                                            <tr>
-
-                                                <td><?php echo $i  ?></td>
-                                                <td><?php echo $user_name  ?></td>
-                                                <td><?php echo $email_id  ?></td>
-                                                <td><?php echo $mobile_no  ?></td>
-                                                <td><?php echo $address  ?></td>
-                                                <td><?php echo $pincode  ?></td>
-                                                <td><?php echo $users_type  ?></td>
-
-                                                <td>
-                                                    <button type="button" class="btn btn-primary">Block</button>
-
-                                                    <button style="margin-top: 1%" type="button" class="btn btn-primary">Reset Password</button>
-
-
-                                                </td>
-
-                                            </tr>
-
-
-
-                                            <?php
-
-
-
-                                            $i++; }
-
-
-
-
-                                        ?>
-
-
-
-                                        </tbody>
-                                    </table>
-
-                                    <div class="pagination" style="margin-top: 3%;margin-bottom: 2%;">
-
-                                        <?php
-
-                                        for($page = 1; $page<= $number_of_page; $page++)
-                                        {
-
-
-?>
-
-
-                                            <ul class="pagination pagination-sm">
-
-                                                <li class="page-item">
-
-                                                    <a class="page-link" href="unique_user.php?page=<?php echo $page  ?>&limit=<?php echo $number_of_page  ?>"><?php echo $page  ?></a>
-
-                                                </li>
-                                            </ul>
-
-                                        <?php
-
-                                        }
-
-
-                                        ?>
-
+                                        </div>
+                                        </div>
                                     </div>
-
                                 </div>
-                                <!-- END DATA TABLE-->
-                            </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-3 col-lg-3">
+                            <a href="unique_user.php">
+                                <div class="overview-item overview-item--c4">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-calendar-note"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>386</h2>
+                                                <span>License Expired in Next 30 days</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="unique_user.php">
+                                <div class="overview-item overview-item--c3">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-calendar-note"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>1,086</h2>
+                                                <span>License Expired in 45 Days</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </a>
                         </div>
 
 
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="unique_user.php">
+                                <div class="overview-item overview-item--c2">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-calendar-note"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>386</h2>
+                                                <span>License Expired in Next 60 days</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="unique_user.php">
+                                <div class="overview-item overview-item--c3">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-calendar-note"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>386</h2>
+                                                <span>License Expired in Next 3 Months</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="unique_user.php">
+                                <div class="overview-item overview-item--c4">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-calendar-note"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>386</h2>
+                                                <span>Non Renewared License</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="au-card m-b-30">
+                                <div class="au-card-inner">
+                                    <h3 class="title-2 m-b-40">Yearly Sales</h3>
+                                    <canvas id="sales-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <!--<p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>-->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
     </div>
 
 </div>
@@ -552,9 +536,6 @@ $page_first_result = ($page-1) * $results_per_page;
 <!-- Bootstrap JS-->
 <script src="vendor/bootstrap-4.1/popper.min.js"></script>
 <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-
-<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 <!-- Vendor JS       -->
 <script src="vendor/slick/slick.min.js">
 </script>
@@ -565,27 +546,24 @@ $page_first_result = ($page-1) * $results_per_page;
 <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
 <script src="vendor/counter-up/jquery.counterup.min.js">
 </script>
+<script src="vendor/chartjs/Chart.bundle.min.js"></script>
+
 <script src="vendor/circle-progress/circle-progress.min.js"></script>
 <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
 <script src="vendor/chartjs/Chart.bundle.min.js"></script>
 <script src="vendor/select2/select2.min.js">
 </script>
 
-<script>
-
-    // $(document).ready(function() {
-    //     $('#example').DataTable();
-    // });
-
-    $('#example').DataTable({
-        "scrollY": 300,
-        "scrollX": true
-
-    });
-</script>
-
 <!-- Main JS-->
 <script src="js/main.js"></script>
+
+<script>
+
+    $('#units').on('click',function()
+    {
+        window.location.href = "total_units.php";
+    })
+</script>
 
 </body>
 

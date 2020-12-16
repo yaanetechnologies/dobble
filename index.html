@@ -128,10 +128,13 @@
                     success:function (data)
                     {
 
-                        if(data == 'superadmin')
+
+                        var res = $.parseJSON(data);
+
+                        if( res.usertype == 'superadmin')
 						{
 
-						    window.location.href = "dashboard.html";
+						    window.location.href = "dashboard.php?api_key="+res.api_key;
 						}
 						else
 
