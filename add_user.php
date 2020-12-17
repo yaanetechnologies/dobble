@@ -52,6 +52,26 @@ $api_key = $_SESSION['api_key'];
 </head>
 
 <style>
+    .ajax_loader
+
+    {
+        position: fixed;
+
+        margin-top: 19%;
+        margin-left: 44%;
+
+    }
+
+    #loadingmessage
+
+    {
+        position: fixed;
+        z-index: 999999;
+
+        background: rgba(0,0,0,0.8);
+        height: 100%;
+        width: 100%;
+    }
 
     em
     {
@@ -60,6 +80,10 @@ $api_key = $_SESSION['api_key'];
 </style>
 
 <body class="animsition">
+<div id="loadingmessage" style="display: none">
+    <img src="images/loadingimg.gif" class="ajax_loader" alt="image">
+</div>
+
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none">
@@ -659,6 +683,8 @@ $api_key = $_SESSION['api_key'];
         },
         submitHandler:function(form)
         {
+            $('#loadingmessage').css('display','block');
+
            var fd = new FormData();
 
             var username = $('#first_name').val();
@@ -696,14 +722,14 @@ $api_key = $_SESSION['api_key'];
 
                 success:function(data)
                 {
-                    console.log(data);
+                    $('#loadingmessage').css('display','none');
 
                     if(data == 200)
                     {
 
                         alert("User Created");
 
-                        window.location.href = "user.php";
+                        window.location.href = "unique_user.php";
                     }
                     else
                     {

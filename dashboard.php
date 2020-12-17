@@ -367,49 +367,28 @@ $_SESSION['api_key'] = $_GET['api_key'];
                         </div>
                     </div>
                     <div class="row m-t-25">
-                        <div class="col-sm-9 col-xs-12">
+                        <div class="col-sm-4 col-xs-12">
                             <a href="unique_user.php">
                                 <div class="overview-item overview-item--c3">
                                     <div class="overview__inner" style="height: 145px">
                                         <div class="overview-box clearfix">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="icon">
-                                                    <i class="fa fa-users"></i>
-                                                </div>
-                                                <div class="text">
-                                                    <h2>990</h2>
-                                                    <span>Total Unique Users</span>
-                                                </div>
+                                            <div class="icon">
+                                                <i class="fa fa-users"></i>
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="icon">
-                                                    <i class="zmdi zmdi-shopping-cart"></i>
-                                                </div>
-                                                <br>
-                                                <div class="text">
-                                                    <h2>388</h2>
-                                                    <span>Total Units</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="icon">
-                                                    <i class="fa fa-users"></i>
-                                                </div>
-                                                <div class="text">
-                                                    <h2>1,086</h2>
-                                                    <span>No of Doodle Customers</span>
-                                                </div>
-                                            </div>
+                                            <div class="text" style="margin-top: 8%;margin-left: 1%;">
 
-                                        </div>
+                                                <span style="font-size: 17px;margin-top: 20px">No Of Customers : 300</span>
+<br>
+
+                                                <span style="font-size: 17px">No Of Units : 300</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
                             </a>
                         </div>
-                        <div class="col-sm-3 col-lg-3">
+                        <div class="col-sm-4 col-xs-12">
                             <a href="unique_user.php">
                                 <div class="overview-item overview-item--c4">
                                     <div class="overview__inner">
@@ -426,7 +405,7 @@ $_SESSION['api_key'] = $_GET['api_key'];
                                 </div>
                             </a>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-4 col-xs-12">
                             <a href="unique_user.php">
                                 <div class="overview-item overview-item--c3">
                                     <div class="overview__inner">
@@ -436,7 +415,7 @@ $_SESSION['api_key'] = $_GET['api_key'];
                                             </div>
                                             <div class="text">
                                                 <h2>1,086</h2>
-                                                <span>License Expired in 45 Days</span>
+                                                <span>License Expired in Next 45 Days</span>
                                             </div>
                                         </div>
                                     </div>
@@ -446,7 +425,7 @@ $_SESSION['api_key'] = $_GET['api_key'];
                         </div>
 
 
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-4 col-xs-12">
                             <a href="unique_user.php">
                                 <div class="overview-item overview-item--c2">
                                     <div class="overview__inner">
@@ -464,7 +443,7 @@ $_SESSION['api_key'] = $_GET['api_key'];
 
                             </a>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-4 col-xs-12">
                             <a href="unique_user.php">
                                 <div class="overview-item overview-item--c3">
                                     <div class="overview__inner">
@@ -482,9 +461,9 @@ $_SESSION['api_key'] = $_GET['api_key'];
 
                             </a>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-4 col-xs-12">
                             <a href="unique_user.php">
-                                <div class="overview-item overview-item--c4">
+                                <div class="overview-item overview-item--c4" style="height: 173px;">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">

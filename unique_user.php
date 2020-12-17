@@ -46,7 +46,7 @@ $responses = $value->{'user_info'};
 
 
 
-$number_of_result = 100;
+$number_of_result = 50;
 
 $results_per_page = 10;
 
