@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -29,13 +30,15 @@ $status = $value->{'status'};
 $userinfo = $value->{'user_info'};
 
 $usertype = $userinfo->{'users_type'};
+$_SESSION['username'] = $userinfo->{'first_name'};
 
 $api_key = $value->{'api_key'};
 
-//if($usertype == 'superadmin')
-//{
-//    header('Location:dashboard.html?api_key='.$api_key);
-//}
+if($usertype == 'superadmin')
+{
+
+    $_SESSION['api_key'] = $api_key;
+}
 
 print_r(json_encode(array('usertype'=>$usertype,'api_key'=>$api_key)));
 

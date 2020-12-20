@@ -214,7 +214,7 @@ $api_key = $_SESSION['api_key'];
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
                     <li class="active has-sub">
-                        <a href="dashboard.php?api_key=<?php echo $api_key ?>">
+                        <a href="dashboard.php">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                 </ul>
@@ -352,11 +352,11 @@ $api_key = $_SESSION['api_key'];
                         <div class="account-wrap">
                             <div class="account-item clearfix js-item-menu">
                                 <div class="content">
-                                    <a class="js-acc-btn" href="#">Admin</a>
+                                    <a class="js-acc-btn" href="#"><?php echo $_SESSION['username']  ?></a>
                                 </div>
                                 <div class="account-dropdown js-dropdown">
                                     <div class="account-dropdown__footer">
-                                        <a href="index.html">
+                                        <a href="logout.php">
                                             <i class="zmdi zmdi-power"></i>Logout</a>
                                     </div>
                                 </div>

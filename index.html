@@ -162,12 +162,14 @@
                         if( res.usertype == 'superadmin')
 						{
 
-						    window.location.href = "dashboard.php?api_key="+res.api_key;
+						    window.location.href = "dashboard.php";
 						}
 						else
 
 						{
-                            window.location.href = "index.html";
+						    alert("Username and Password is Incorrect");
+
+                           // window.location.href = "index.html";
 						}
 
 

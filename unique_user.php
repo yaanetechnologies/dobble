@@ -262,7 +262,7 @@ $page_first_result = ($page-1) * $results_per_page;
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
                     <li class="active has-sub">
-                        <a href="dashboard.php?api_key=<?php echo $api_key ?>">
+                        <a href="dashboard.php">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                 </ul>
@@ -399,11 +399,11 @@ $page_first_result = ($page-1) * $results_per_page;
                         <div class="account-wrap">
                             <div class="account-item clearfix js-item-menu">
                                 <div class="content">
-                                    <a class="js-acc-btn" href="#">Admin</a>
+                                    <a class="js-acc-btn" href="#"><?php echo $_SESSION['username'];  ?></a>
                                 </div>
                                 <div class="account-dropdown js-dropdown">
                                     <div class="account-dropdown__footer">
-                                        <a href="index.html">
+                                        <a href="logout.php">
                                             <i class="zmdi zmdi-power"></i>Logout</a>
                                     </div>
                                 </div>
@@ -416,21 +416,31 @@ $page_first_result = ($page-1) * $results_per_page;
         </header>
 
         <div class="main-content">
+
+            <div class="row" >
+
+                <div class="col-md-12">
+
+                    <h3 style="margin-left: -6%;font-weight: normal !important;">Super User Details</h3>
+
+                </div>
+
+            </div>
+
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
 
-                    <div class="row" >
 
-
-
-                    </div>
 
                     <div class="row" style="margin-left: -14                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    %;">
 
                         <div class="row m-t-30">
                             <div class="col-md-12">
+
+
+
                                 <!-- DATA TABLE-->
-                                <div class="table-responsive" style="width: 85%;margin-left: -8%;" >
+                                <div class="table-responsive" style="margin-left: -8%;" >
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                         <tr>
@@ -440,8 +450,6 @@ $page_first_result = ($page-1) * $results_per_page;
                                             <th>Email</th>
                                             <th>Mobile</th>
                                             <th>Address</th>
-                                            <th>Pincode</th>
-                                            <th>Usertype</th>
                                             <th>status</th>
 
                                         </tr>
@@ -464,22 +472,22 @@ $page_first_result = ($page-1) * $results_per_page;
                                             $mobile_no = $respons->{'mobile_no'};
                                             $pincode = $respons->{'pincode'};
                                             $user_name = $respons->{'user_name'};
-                                            $users_type = $respons->{'users_type'};
+                                            $user_id = $respons->{'user_id'};
+
                                             ?>
-                                            <tr>
+                                            <tr class="block_newuser<?php  echo $user_id ?>" id="block_newuser">
 
                                                 <td><?php echo $i  ?></td>
                                                 <td><?php echo $user_name  ?></td>
                                                 <td><?php echo $email_id  ?></td>
                                                 <td><?php echo $mobile_no  ?></td>
-                                                <td><?php echo $address  ?></td>
-                                                <td><?php echo $pincode  ?></td>
-                                                <td><?php echo $users_type  ?></td>
+                                                <td><?php echo $address  ?><br>&nbsp;<?php echo $pincode  ?></td>
+
 
                                                 <td>
-                                                    <button type="button" class="btn btn-primary">Block</button>
+                                                    <button type="button" class="btn btn-primary block_button" style="font-size: 13px;" data-id="<?php echo $user_id  ?>" data-name = "<?php echo $user_name;  ?>" >Block</button>
 
-                                                    <button style="margin-top: 1%" type="button" class="btn btn-primary">Reset Password</button>
+                                                    <button style="margin-top: 1%;font-size: 13px;" type="button" class="btn btn-primary reset_password">Reset Password</button>
 
 
                                                 </td>
@@ -547,6 +555,59 @@ $page_first_result = ($page-1) * $results_per_page;
 
 </div>
 
+
+<div class="modal reset_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Reset Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <label>Old Password</label>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <input type="password" id="old_password" name="old_password" class="form-control">
+                    </div>
+
+                </div>
+
+                <br>
+
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <label>New Password</label>
+
+                    </div>
+                    <div class="col-md-6">
+
+<input type="password" name="new_password" id="new_password" class="form-control">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary reset_submit">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <!-- Jquery JS-->
 <script src="vendor/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap JS-->
@@ -586,6 +647,99 @@ $page_first_result = ($page-1) * $results_per_page;
 
 <!-- Main JS-->
 <script src="js/main.js"></script>
+
+<script>
+
+    $('.block_button').on('click',function()
+    {
+        var user_id = $(this).attr('data-id');
+        var user_name = $(this).attr('data-name');
+
+
+       var msg = "Are you sure you want to block this " + user_name + "?";
+
+       if(confirm(msg))
+       {
+
+
+           $('.block_newuser'+user_id+' td:nth-child(6) .block_button').hide();
+
+           $('.block_newuser'+user_id+' td:nth-child(6)').append('<button type="button" style="margin-top:1%;font-size: 13px;" class="btn btn-danger unblock_button" data-id="'+user_id+'" data-name ="'+user_name+'">Unblock</button>');
+
+
+          // $('tr .block_class').removeClass('change_me').addClass('new_class');
+       }
+
+
+    });
+
+
+    $('#block_newuser .unblock_button').on('click',function()
+    {
+        alert("ok");
+
+        var user_id = $(this).attr('data-id');
+        var user_name = $(this).attr('data-name');
+
+
+       var msg = "Are you sure you want to block this " + user_name + "?";
+
+       if(confirm(msg))
+       {
+
+
+           $('.block_newuser'+user_id+' td:nth-child(6) .block_button').hide();
+           $('.block_newuser'+user_id+' td:nth-child(6)').append('<button type="button" style="margin-top:1%;font-size: 13px;" class="btn btn-danger unblock_button" data-id="'+user_id+'" data-name ="'+user_name+'">Unblock</button>');
+
+
+          // $('tr .block_class').removeClass('change_me').addClass('new_class');
+       }
+
+
+    })
+
+    $('.reset_password').on('click',function()
+    {
+        $('.reset_modal').modal('show');
+
+    })
+
+    $('.reset_submit').on('click',function()
+    {
+
+        var new_password = $('#new_password').val();
+        var old_password = $('#old_password').val();
+
+        if(new_password == '')
+        {
+            alert("Enter New Password");
+        }
+        else if (old_password == '')
+        {
+            alert("Enter Old Password");
+        }
+
+        else
+        {
+
+            alert("Your Password have changed successfully");
+
+            $('.reset_modal').modal('hide');
+        }
+    })
+
+
+    $('.reset_modal').on('hidden.bs.modal', function (e) {
+        $(this)
+            .find("input,textarea,select")
+            .val('')
+            .end()
+            .find("input[type=checkbox], input[type=radio]")
+            .prop("checked", "")
+            .end();
+    })
+
+</script>
 
 </body>
 

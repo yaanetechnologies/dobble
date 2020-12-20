@@ -3,7 +3,10 @@
 
 session_start();
 
-$_SESSION['api_key'] = $_GET['api_key'];
+//print_r($_SESSION['api_key']);
+
+
+
 
 
 ?>
@@ -314,11 +317,11 @@ $_SESSION['api_key'] = $_GET['api_key'];
                         <div class="account-wrap">
                             <div class="account-item clearfix js-item-menu">
                                 <div class="content">
-                                    <a class="js-acc-btn" href="#">Admin</a>
+                                    <a class="js-acc-btn" href="#"><?php  echo $_SESSION['username']; ?></a>
                                 </div>
                                 <div class="account-dropdown js-dropdown">
                                     <div class="account-dropdown__footer">
-                                        <a href="index.html">
+                                        <a href="logout.php">
                                             <i class="zmdi zmdi-power"></i>Logout</a>
                                     </div>
                                 </div>
@@ -370,7 +373,7 @@ $_SESSION['api_key'] = $_GET['api_key'];
                         <div class="col-sm-4 col-xs-12">
                             <a href="unique_user.php">
                                 <div class="overview-item overview-item--c3">
-                                    <div class="overview__inner" style="height: 145px">
+                                    <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
                                                 <i class="fa fa-users"></i>
@@ -463,7 +466,7 @@ $_SESSION['api_key'] = $_GET['api_key'];
                         </div>
                         <div class="col-sm-4 col-xs-12">
                             <a href="unique_user.php">
-                                <div class="overview-item overview-item--c4" style="height: 173px;">
+                                <div class="overview-item overview-item--c4">
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
@@ -480,6 +483,7 @@ $_SESSION['api_key'] = $_GET['api_key'];
                             </a>
                         </div>
                     </div>
+
 
                     <div class="row">
 
@@ -542,6 +546,19 @@ $_SESSION['api_key'] = $_GET['api_key'];
     {
         window.location.href = "total_units.php";
     })
+
+    // $(document).ready(function($) {
+    //
+    //     if (window.history && window.history.pushState) {
+    //
+    //         window.history.pushState('forward', null, './#forward');
+    //
+    //         $(window).on('popstate', function() {
+    //             alert('Back button was pressed.');
+    //         });
+    //
+    //     }
+    // });
 </script>
 
 </body>
