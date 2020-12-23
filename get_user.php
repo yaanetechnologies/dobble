@@ -770,7 +770,7 @@ $enroll_end_date = date('Y/m/d',$data->{'enroll_end_date'});
                     if(data == 200)
                     {
 
-                        alert("User Created");
+                        alert("User Updated Successfully");
 
                         window.location.href = "unique_user.php";
                     }
