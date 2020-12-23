@@ -6,7 +6,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660f3491-ecb1-4a5d-b466-729571ef727e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/view_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alert.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/badge.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/button.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/calendar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/card.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/get_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/get_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unique_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/unique_user.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +31,7 @@
     <session id="15412023">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="20" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
@@ -41,7 +51,8 @@
           <entry key="project.open.time.60" value="2" />
           <entry key="project.open.time.64" value="1" />
           <entry key="project.open.time.67" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -49,7 +60,7 @@
           <entry key="css" value="5" />
           <entry key="html" value="24" />
           <entry key="js" value="1" />
-          <entry key="php" value="65" />
+          <entry key="php" value="70" />
           <entry key="twig" value="1" />
         </counts>
       </usages-collector>
@@ -58,7 +69,7 @@
           <entry key="CSS" value="5" />
           <entry key="HTML" value="24" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="65" />
+          <entry key="PHP" value="70" />
           <entry key="Twig" value="1" />
         </counts>
       </usages-collector>
@@ -66,14 +77,14 @@
         <counts>
           <entry key="css" value="96" />
           <entry key="html" value="1291" />
-          <entry key="php" value="5568" />
+          <entry key="php" value="5808" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="96" />
           <entry key="HTML" value="1291" />
-          <entry key="PHP" value="5568" />
+          <entry key="PHP" value="5808" />
         </counts>
       </usages-collector>
     </session>
@@ -83,9 +94,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/unique_user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="508" column="112" selection-start-line="508" selection-start-column="112" selection-end-line="508" selection-end-column="112" />
+            <state relative-caret-position="363">
+              <caret line="524" column="131" selection-start-line="524" selection-start-column="131" selection-end-line="524" selection-end-column="131" />
               <folding>
+                <element signature="n#style#0;n#button#0;n#a#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
               </folding>
@@ -94,10 +106,29 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view_user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="518" column="53" selection-start-line="518" selection-start-column="53" selection-end-line="518" selection-end-column="53" />
+              <folding>
+                <element signature="n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#html#0;n#!!top" />
+                <element signature="n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#header#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/get_user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="772" column="56" selection-start-line="772" selection-start-column="56" selection-end-line="772" selection-end-column="56" />
+            <state relative-caret-position="345">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -106,7 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>name=&quot;address&quot;</find>
       <find>name=&quot;password&quot;</find>
       <find>.overview-item--c2</find>
       <find>example2</find>
@@ -136,6 +166,7 @@
       <find>$responses</find>
       <find>api_key</find>
       <find>password</find>
+      <find>fa fa-</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,8 +195,9 @@
         <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/add_user.php" />
         <option value="$PROJECT_DIR$/update_user.php" />
-        <option value="$PROJECT_DIR$/unique_user.php" />
         <option value="$PROJECT_DIR$/get_user.php" />
+        <option value="$PROJECT_DIR$/unique_user.php" />
+        <option value="$PROJECT_DIR$/view_user.php" />
       </list>
     </option>
   </component>
@@ -192,7 +224,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,6 +240,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -260,18 +292,19 @@
       <workItem from="1608433062286" duration="42000" />
       <workItem from="1608433802612" duration="5830000" />
       <workItem from="1608648703860" duration="6835000" />
-      <workItem from="1608686114096" duration="548000" />
+      <workItem from="1608686114096" duration="1020000" />
+      <workItem from="1608736645847" duration="2031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55228000" />
+    <option name="totallyTimeSpent" value="57731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28651237" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29130086" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -284,7 +317,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32300162" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3219512" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -327,13 +360,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="453" selection-start-line="445" selection-end-line="453" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/chart.html" />
     <entry file="file://$PROJECT_DIR$/login/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-458" />
@@ -420,20 +447,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="84" column="90" selection-start-line="84" selection-start-column="77" selection-end-line="84" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard.html" />
     <entry file="file://$PROJECT_DIR$/../dashboard/add-customer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21705">
@@ -497,13 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/update_user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -511,11 +518,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/update_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="80" column="1" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/unique_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="508" column="112" selection-start-line="508" selection-start-column="112" selection-end-line="508" selection-end-column="112" />
+        <state relative-caret-position="363">
+          <caret line="524" column="131" selection-start-line="524" selection-start-column="131" selection-end-line="524" selection-end-column="131" />
           <folding>
+            <element signature="n#style#0;n#button#0;n#a#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
           </folding>
@@ -524,8 +546,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/get_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="772" column="56" selection-start-line="772" selection-start-column="56" selection-end-line="772" selection-end-column="56" />
+        <state relative-caret-position="345">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="518" column="53" selection-start-line="518" selection-start-column="53" selection-end-line="518" selection-end-column="53" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#html#0;n#!!top" />
+            <element signature="n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#header#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

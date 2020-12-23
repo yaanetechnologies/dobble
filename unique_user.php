@@ -514,15 +514,15 @@ $page_first_result = ($page-1) * $results_per_page;
                                                 <td>
                                                     <button type="button" class="btn btn-primary block_button" style="font-size: 13px;" data-id="<?php echo $user_id  ?>" data-name = "<?php echo $user_name;  ?>" >Block</button>
 
-                                                    <button style="margin-top: 1%;font-size: 13px;" type="button" class="btn btn-primary reset_password">Reset Password</button>
+<!--                                                    <button style="margin-top: 1%;font-size: 13px;" type="button" class="btn btn-primary reset_password">Reset Password</button>-->
 
 
                                                 </td>
 
 
                                                 <td>
-                                                    <a href="get_user.php?id=<?php echo $user_id; ?>">
-                                                        <i class="fa fa-edit"></i>
+                                                    <a href="view_user.php?id=<?php echo $user_id; ?>">
+                                                        <button type="button" class="btn btn-primary" style="font-size: 13px;">View</button>
 
                                                     </a>
 

@@ -33,10 +33,12 @@ $responses = $value->{'user_info'};
 
 $data = $responses[0];
 
+//print_r($data);
+//
+//die();
 
-
-$enroll_date = date('Y/m/d',$data->{'enroll_date'});
-$enroll_end_date = date('Y/m/d',$data->{'enroll_end_date'});
+//$enroll_date = date('Y/m/d',$data->{'enroll_date'});
+//$enroll_end_date = date('Y/m/d',$data->{'enroll_end_date'});
 
 
 
@@ -87,6 +89,14 @@ $enroll_end_date = date('Y/m/d',$data->{'enroll_end_date'});
 </head>
 
 <style>
+
+    .crow
+    {
+
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
     .ajax_loader
 
     {
@@ -410,113 +420,123 @@ $enroll_end_date = date('Y/m/d',$data->{'enroll_end_date'});
                 <div class="container-fluid">
                     <div class="row">
 
+                        <div class="col-md-12">
+                            <a style="float: right" href="get_user.php?id=<?php echo $user_id; ?>">
+                            <button  type="button" class="btn btn btn-primary">
+                               <i class="fa fa-edit"></i> Edit
+                            </button>
+                            </a>
+
+                        </div>
+
                         <input type="hidden" id="api_key" name="api_key" class="form-control" value="<?php echo $_SESSION['api_key'] ?>">
                         <input type="hidden" id="user_id" name="user_id" class="form-control" value="<?php echo $id ?>">
 
 
-                        <div class="col-lg-12 col-md-12">
+                        <div class="col-lg-12 col-md-12" style="margin-top: 3%">
                             <div class="card">
                                 <!--                                <div class="card-header">-->
                                 <!--                                    <strong>Basic Form</strong> Elements-->
                                 <!--                                </div>-->
                                 <div class="card-body card-block">
-                                    <form action="" id="user_form" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="first_name" class=" form-control-label">FirstName</label>
-                                            </div>
-                                            <div class="col-12 col-md-9">
-                                                <input type="text" id="first_name" name="first_name" value="<?php echo $data->{'user_name'} ?>" placeholder="Enter Firstname" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="mobile" class=" form-control-label">Mobile</label>
-                                            </div>
-                                            <div class="col-12 col-md-9">
-                                                <input type="text" id="mobile" maxlength="10" name="mobile" value="<?php echo $data->{'mobile_no'} ?>" placeholder="Enter Mobile" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="email_id" class=" form-control-label">Email</label>
-                                            </div>
-                                            <div class="col-12 col-md-9">
-                                                <input type="text" id="email_id" name="email_id" value="<?php echo $data->{'email_id'} ?>" placeholder="Enter Email" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="password" class="form-control-label">Password</label>
-                                            </div>
-                                            <div class="col-12 col-md-9">
-                                                <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control">
-                                            </div>
-                                        </div>
 
+                                    <div class="row crow">
 
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="address" class=" form-control-label">Address</label>
-                                            </div>
-                                            <div class="col-12 col-md-9">
+                                        <div class="col-md-4 col-sm-4">
 
-                                                <textarea rows="9" name="address" id="address" class="form-control" placeholder="Enter Address"><?php echo $data->{'address'}  ?></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="enroll_date" class=" form-control-label">Enroll Date</label>
-                                            </div>
-                                            <div class="col-12 col-md-9">
-                                                <div class="input-group date">
-                                                    <input type="text"  name="fromdate" class="form-control" id="fromdate" value="<?php echo $enroll_date ?>"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="end_date" class=" form-control-label" >Enroll End Date</label>
-                                            </div>
-                                            <div class="col-12 col-md-9">
-                                                <div class="input-group date">
-                                                    <input type="text" value="<?php echo $enroll_date ?>" name="enddate" class="form-control" id="end_date"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="pincode" class="form-control-label">Pincode</label>
-                                            </div>
-                                            <div class="col-12 col-md-9">
-                                                <input type="text" id="pincode" value="<?php echo $data->{'pincode'} ?>" maxlength="6" name="pincode" placeholder="Enter Pincode"  class="form-control">
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="city" class="form-control-label">City</label>
-                                            </div>
-                                            <div class="col-12 col-md-9">
-                                                <input type="text" id="city" value="<?php echo $data->{'city'} ?>" name="city" placeholder="Enter city"  class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <center>
-                                                <button type="submit" class="btn btn-primary btn-sm">
-                                                    <i class="fa fa-dot-circle-o"></i> Submit
-                                                </button>
-
-                                            </center>
+                                            <p>Name</p>
 
                                         </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <?php echo ucfirst($data->{'user_name'}) ?>
+                                        </div>
 
+                                    </div>
+                                    <div class="row crow">
 
-                                    </form>
+                                        <div class="col-md-4 col-sm-4">
+
+                                            <p>Email</p>
+
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <?php echo $data->{'email_id'} ?>
+                                        </div>
+
+                                    </div>
+                                    <div class="row crow">
+
+                                        <div class="col-md-4 col-sm-4">
+
+                                            <p>Mobile</p>
+
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <?php echo $data->{'mobile_no'} ?>
+                                        </div>
+
+                                    </div>
+                                    <div class="row crow">
+
+                                        <div class="col-md-4 col-sm-4">
+
+                                            <p>Address</p>
+
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <?php echo $data->{'address'} ?>
+                                        </div>
+
+                                    </div>
+                                    <div class="row crow">
+
+                                        <div class="col-md-4 col-sm-4">
+
+                                            <p>Enroll Date</p>
+
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <?php echo $data->{'enroll_date'} ?>
+                                        </div>
+
+                                    </div>
+                                    <div class="row crow">
+
+                                        <div class="col-md-4 col-sm-4">
+
+                                            <p>Enroll End Date</p>
+
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <?php echo $data->{'enroll_end_date'} ?>
+                                        </div>
+
+                                    </div>
+                                    <div class="row crow">
+
+                                        <div class="col-md-4 col-sm-4">
+
+                                            <p>Pincode</p>
+
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <?php echo $data->{'pincode'} ?>
+                                        </div>
+
+                                    </div>
+                                    <div class="row crow">
+
+                                        <div class="col-md-4 col-sm-4">
+
+                                            <p>City</p>
+
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <?php echo $data->{'city'} ?>
+                                        </div>
+
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -722,7 +742,7 @@ $enroll_end_date = date('Y/m/d',$data->{'enroll_end_date'});
         },
         submitHandler:function(form)
         {
-           $('#loadingmessage').css('display','block');
+            $('#loadingmessage').css('display','block');
 
             var fd = new FormData();
 
