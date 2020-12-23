@@ -451,6 +451,7 @@ $page_first_result = ($page-1) * $results_per_page;
                                             <th>Mobile</th>
                                             <th>Address</th>
                                             <th>status</th>
+                                            <th>Action</th>
 
                                         </tr>
                                         </thead>
@@ -478,10 +479,36 @@ $page_first_result = ($page-1) * $results_per_page;
                                             <tr class="block_newuser<?php  echo $user_id ?>" id="block_newuser">
 
                                                 <td><?php echo $i  ?></td>
-                                                <td><?php echo $user_name  ?></td>
-                                                <td><?php echo $email_id  ?></td>
-                                                <td><?php echo $mobile_no  ?></td>
-                                                <td><?php echo $address  ?><br>&nbsp;<?php echo $pincode  ?></td>
+                                                <td>
+                                                    <p style="width: 25px">
+                                                    <?php echo $user_name  ?>
+                                                    </p>
+
+                                                </td>
+                                                <td>
+                                                    <p>
+
+                                                        <?php echo $email_id  ?>
+
+                                                    </p>
+
+
+
+                                                </td>
+                                                <td>
+                                                    <p>
+
+                                                    <?php echo $mobile_no  ?>
+
+                                                    </p>
+
+                                                </td>
+                                                <td>
+                                                    <p>
+
+                                                        <?php echo $address  ?><br>&nbsp;<?php echo $pincode  ?>
+                                                    </p>
+                                                   </td>
 
 
                                                 <td>
@@ -491,6 +518,16 @@ $page_first_result = ($page-1) * $results_per_page;
 
 
                                                 </td>
+
+
+                                                <td>
+                                                    <a href="get_user.php?id=<?php echo $user_id; ?>">
+                                                        <i class="fa fa-edit"></i>
+
+                                                    </a>
+
+                                                </td>
+
 
                                             </tr>
 
