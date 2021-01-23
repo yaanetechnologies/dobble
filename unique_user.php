@@ -105,6 +105,10 @@ $page_first_result = ($page-1) * $results_per_page;
 </head>
 
 <style>
+    a
+    {
+        color:#808080;
+    }
 
     .menu-sidebar
     {
@@ -417,16 +421,42 @@ $page_first_result = ($page-1) * $results_per_page;
 
         <div class="main-content">
 
-            <div class="row" >
+            <div class="row">
 
-                <div class="col-md-12">
+                <div class="col-md-6">
 
-                    <h3 style="margin-left: -6%;font-weight: normal !important;">Super User Details</h3>
+                    <h4 style="margin-left: -6%;font-weight: normal !important;">Super User Details</h4>
 
                 </div>
 
+                <div class="col-md-6">
+
+                    <a href="excel_upload.php" style="float: right;margin-left:-25px;">
+                        <button type="button" class="btn btn-primary">
+
+                            <i class="fa fa-plus"></i>
+
+                            Excel upload
+
+                        </button>
+
+                    </a>
+
+
+                </div>
+
+
+
+
             </div>
 
+
+
+<div class="row">
+
+
+
+</div>
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
 
@@ -451,7 +481,6 @@ $page_first_result = ($page-1) * $results_per_page;
                                             <th>Mobile</th>
                                             <th>Address</th>
                                             <th>status</th>
-                                            <th>Action</th>
 
                                         </tr>
                                         </thead>
@@ -478,36 +507,51 @@ $page_first_result = ($page-1) * $results_per_page;
                                             ?>
                                             <tr class="block_newuser<?php  echo $user_id ?>" id="block_newuser">
 
-                                                <td><?php echo $i  ?></td>
+                                                <td>   <a href="view_user.php?id=<?php echo $user_id; ?>">
+
+
+                                                    <?php echo $i  ?>
+                                                    </a>
+                                                </td>
                                                 <td>
-                                                    <p style="width: 25px">
-                                                    <?php echo $user_name  ?>
-                                                    </p>
+                                                    <a href="view_user.php?id=<?php echo $user_id; ?>">
+
+                                                        <p style="width: 25px">
+                                                            <?php echo $user_name  ?>
+                                                        </p>
+                                                    </a>
+
 
                                                 </td>
                                                 <td>
+                                                    <a href="view_user.php?id=<?php echo $user_id; ?>">
                                                     <p>
 
                                                         <?php echo $email_id  ?>
 
                                                     </p>
+                                                    </a>
 
 
 
                                                 </td>
                                                 <td>
+                                                    <a href="view_user.php?id=<?php echo $user_id; ?>">
                                                     <p>
 
                                                     <?php echo $mobile_no  ?>
 
                                                     </p>
+                                                    </a>
 
                                                 </td>
                                                 <td>
+                                                    <a href="view_user.php?id=<?php echo $user_id; ?>">
                                                     <p>
 
                                                         <?php echo $address  ?><br>&nbsp;<?php echo $pincode  ?>
                                                     </p>
+                                                    </a>
                                                    </td>
 
 
@@ -520,13 +564,6 @@ $page_first_result = ($page-1) * $results_per_page;
                                                 </td>
 
 
-                                                <td>
-                                                    <a href="view_user.php?id=<?php echo $user_id; ?>">
-                                                        <button type="button" class="btn btn-primary" style="font-size: 13px;">View</button>
-
-                                                    </a>
-
-                                                </td>
 
 
                                             </tr>

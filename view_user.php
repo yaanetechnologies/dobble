@@ -421,7 +421,7 @@ $data = $responses[0];
                     <div class="row">
 
                         <div class="col-md-12">
-                            <a style="float: right" href="get_user.php?id=<?php echo $user_id; ?>">
+                            <a style="float: right" href="get_user.php?id=<?php echo $id; ?>">
                             <button  type="button" class="btn btn btn-primary">
                                <i class="fa fa-edit"></i> Edit
                             </button>
