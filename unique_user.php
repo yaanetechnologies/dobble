@@ -431,16 +431,16 @@ $page_first_result = ($page-1) * $results_per_page;
 
                 <div class="col-md-6">
 
-                    <a href="excel_upload.php" style="float: right;margin-left:-25px;">
-                        <button type="button" class="btn btn-primary">
-
-                            <i class="fa fa-plus"></i>
-
-                            Excel upload
-
-                        </button>
-
-                    </a>
+<!--                    <a href="excel_upload.php" style="float: right;margin-left:-25px;">-->
+<!--                        <button type="button" class="btn btn-primary">-->
+<!---->
+<!--                            <i class="fa fa-plus"></i>-->
+<!---->
+<!--                            Excel upload-->
+<!---->
+<!--                        </button>-->
+<!---->
+<!--                    </a>-->
 
 
                 </div>

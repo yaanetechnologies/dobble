@@ -323,7 +323,7 @@ session_start();
                         <!--</div>-->
                         <!--<div class="notifi__item">-->
                         <!--<div class="bg-c2 img-cir img-40">-->
-                        f              <!--<i class="zmdi zmdi-account-box"></i>-->
+                               <!--<i class="zmdi zmdi-account-box"></i>-->
                         <!--</div>-->
                         <!--<div class="content">-->
                         <!--<p>Your account has been blocked</p>-->

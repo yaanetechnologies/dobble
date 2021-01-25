@@ -292,7 +292,7 @@ session_start();
                         <!--</div>-->
                         <!--<div class="notifi__item">-->
                         <!--<div class="bg-c2 img-cir img-40">-->
-          f              <!--<i class="zmdi zmdi-account-box"></i>-->
+                      <!--<i class="zmdi zmdi-account-box"></i>-->
                         <!--</div>-->
                         <!--<div class="content">-->
                         <!--<p>Your account has been blocked</p>-->
@@ -343,7 +343,7 @@ session_start();
 
                         <div class="col-md-12">
 
-                            <a href="add_user.php" style="float: right;">
+                            <a href="add_user.php" style="float: right;margin-left:1.4px">
 
                                 <button type="button" class="btn btn-primary">
 
@@ -355,6 +355,16 @@ session_start();
 
                             </a>
 
+                            <a href="excel_upload.php" style="float: right">
+                            <button type="button" class="btn btn-primary">
+
+                                <i class="fa fa-plus"></i>
+
+                               Excel upload
+
+                            </button>
+
+</a>
 
                         </div>
 
